@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 				return (-1);
 			i++;
 			prntd_chars += getprintfun(args, &format[i]);
-			i++;
+			continue;
 		}
 	}
 	va_end(args);
