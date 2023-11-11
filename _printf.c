@@ -16,9 +16,9 @@ int _printf(const char *format, ...)
 	(format[0] == '%' && format[1] == ' ' && format[2] == '\0'))
 		return (-1);
 	i = 0;
-	while (format[i] != '\0')
+	while (format[i])
 	{
-		if (format[i] != '%')
+		if (format[i] != '%' && format[i + 1])
 		{
 			prntd_chars += writechar(format[i]);
 			i++;
