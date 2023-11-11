@@ -16,15 +16,15 @@ int _printf(const char *format, ...)
 	(format[0] == '%' && format[1] == ' ' && format[2] == '\0'))
 		return (-1);
 	i = 0;
-	while (format[i])
+	while (format[i] != '\0')
 	{
-		if (format[i] != '%' && format[i + 1])
+		if (format[i] != '%')
 		{
 			prntd_chars += writechar(format[i]);
 			i++;
 			continue;
 		}
-		else
+		else if (format[i] == '%' && format[i + 1])
 		{
 			i++;
 			prntd_chars += getprintfun(args, &format[i]);
