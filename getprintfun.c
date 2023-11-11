@@ -22,7 +22,7 @@ int getprintfun(va_list args, const char *cursor)
 			return (_printstr(args));
 		else if (cursor[i] == '%')
 			return (_printperc());
-		else if (cursor[i] == 'd')
+		else if (cursor[i] == 'i' || cursor[i] == 'd')
 			return (_printint(args));
 		i++;
 	}

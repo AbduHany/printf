@@ -17,6 +17,11 @@ int intToStr(int x, int flag, int negativeSignPrinted)
 		flag = 1;
 		checker = (x * (-1));
 	}
+	else if (x == 0)
+	{
+		writechar('0');
+		return (1);
+	}
 	else
 	{
 		flag = 0;
@@ -37,10 +42,6 @@ int intToStr(int x, int flag, int negativeSignPrinted)
 		}
 		intToStr(checker, flag, negativeSignPrinted);
 		counter = counter + (writechar(c));
-	}
-	else
-	{
-
 	}
 
 	return (counter);
