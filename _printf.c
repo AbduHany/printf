@@ -8,19 +8,17 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, prntd_chars = 0;
+	int i, prntd_chars = 0, tmp = 0;
 	va_list args;
 
 	va_start(args, format);
 	if (format == NULL || format[0] == '\0')
 		return (-1);
-	i = 0;
-	while (format[i] != '\0')
+	for (i = 0; format && format[i]; i++)
 	{
 		if (format[i] != '%')
 		{
 			prntd_chars += writechar(format[i]);
-			i++;
 			continue;
 		}
 		else if (format[i] == '%')
@@ -28,8 +26,11 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == '\0' || format[i + 1] == ' ')
 				return (-1);
 			i++;
-			prntd_chars += getprintfun(args, &format[i]);
-			i++;
+			tmp = getprintfun(args, &format[i]);
+			if (tmp == -1)
+				return (-1);
+			prntd_chars += tmp;
+			continue;
 		}
 	}
 	va_end(args);
