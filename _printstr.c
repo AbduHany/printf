@@ -14,5 +14,5 @@ int _printstr(va_list args)
 	str = (char *) va_arg(args, char *);
 	for (i = 0, len = 0; str[i]; i++)
 		len++;
-	writestr(str, len);
+	return (writestr(str, len));
 }

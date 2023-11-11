@@ -9,5 +9,5 @@ int _printperc(void)
 {
 	char c = '%';
 
-	writechar(c);
+	return (writechar(c));
 }

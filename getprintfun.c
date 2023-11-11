@@ -10,7 +10,7 @@
  */
 int getprintfun(va_list args, const char *cursor)
 {
-	int i = 0, prntdchars = 0;
+	int i = 0;
 
 	while (cursor[i] != ' ' || cursor[i] != '\0')
 	{
@@ -22,4 +22,5 @@ int getprintfun(va_list args, const char *cursor)
 		else if (cursor[i] == '%')
 			return (_printperc());
 	}
+	return (0);
 }
