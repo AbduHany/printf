@@ -1,3 +1,4 @@
 # ignores the test directory to test the code.
 test/
 main.c
+test.c

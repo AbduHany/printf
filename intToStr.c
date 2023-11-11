@@ -11,14 +11,15 @@
  */
 int intToStr(int x, int flag, int negativeSignPrinted)
 {
-	int converted = 0, rem, checker;
+	int digits[10], i;
+	int numDigits = 0, rem;
 	static int counter = 1;
 	char c;
 
 	if (x < 0)
 	{
 		flag = 1;
-		checker = -x;
+		x = -x;
 	}
 	else if (x == 0)
 	{
@@ -28,7 +29,6 @@ int intToStr(int x, int flag, int negativeSignPrinted)
 	else
 	{
 		flag = 0;
-		checker = x;
 	}
 
 	if (flag == 1 && !negativeSignPrinted)
@@ -37,18 +37,16 @@ int intToStr(int x, int flag, int negativeSignPrinted)
 		negativeSignPrinted = 1;
 		counter++;
 	}
-	while (checker > 0)
+	while (x > 0)
 	{
-		rem = checker % 10;
-		converted = converted * 10 + rem;
-		checker = checker / 10;
+		rem = x % 10;
+		digits[numDigits++] = rem;
+		x = x / 10;
 	}
-	while (converted > 0)
+	for (i = numDigits - 1; i >= 0; i--)
 	{
-		rem = converted % 10;
-		c = rem + '0';
+		c = digits[i] + '0';
 		counter += writechar(c);
-		converted = converted / 10;
 	}
 	return (counter - 1);
 }
