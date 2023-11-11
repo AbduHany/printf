@@ -9,6 +9,8 @@
  */
 int writechar(char c)
 {
+	if (c == '\0')
+		return (-1);
 	return (write(1, &c, 1));
 }
 
@@ -22,5 +24,7 @@ int writechar(char c)
  */
 int writestr(char *str, int len)
 {
+	if (str == NULL)
+		return (-1);
 	return (write(1, str, len));
 }
