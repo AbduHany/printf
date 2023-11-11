@@ -45,7 +45,7 @@ int intToStr(int x, int flag, int negativeSignPrinted)
         checker = checker / 10;
     }
 
-    
+   
     while (converted > 0)
     {
         rem = converted % 10;
