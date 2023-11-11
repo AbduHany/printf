@@ -27,6 +27,8 @@ int _printf(const char *format, ...)
 		else if (format[i] == '%' && format[i + 1])
 		{
 			i++;
+			if (getprintfun(args, &format[i]) == (-1))
+				return (-1);
 			prntd_chars += getprintfun(args, &format[i]);
 			i++;
 		}
