@@ -10,6 +10,7 @@
 int getprintfun(va_list args, const char *cursor)
 {
 	int i = 0;
+
 	if (cursor == NULL || cursor[0] == '\0')
 		return (-1);
 
