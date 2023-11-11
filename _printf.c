@@ -24,11 +24,12 @@ int _printf(const char *format, ...)
 			i++;
 			continue;
 		}
-		i++;
-		prntd_chars += getprintfun(args, &format[i]);
-		while (format[i] != ' ' && format[i] != '%' &&
-		format[i] != '\0')
+		else
+		{
 			i++;
+			prntd_chars += getprintfun(args, &format[i]);
+			i++;
+		}
 	}
 	va_end(args);
 	return (prntd_chars);
