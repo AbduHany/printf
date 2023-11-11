@@ -7,7 +7,7 @@
  * Return: returns the number of the charecters printed including
  * the negative sign if the sign is neagtive
 */
-int intToStr(signed int x, int flag, int negativeSignPrinted)
+int intToStr(int x, int flag, int negativeSignPrinted)
 {
 	int converted = 0, rem, checker, counter = 0;
 	char c;

@@ -7,7 +7,7 @@
  */
 int _printint(va_list args)
 {
-	signed int i, counter = 0;
+	int i, counter = 0;
 
 	i = va_arg(args, int);
 	counter = counter + intToStr(i, 0, 0);
