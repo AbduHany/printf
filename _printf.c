@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 	if (format == NULL || format[0] == '\0')
 		return (-1);
 	i = 0;
-	while (format[i] != '\0')
+	while (format && format[i])
 	{
 		if (format[i] != '%')
 		{
