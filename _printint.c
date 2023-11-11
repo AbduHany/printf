@@ -1,16 +1,16 @@
 #include "main.h"
 /**
- * _printchar - prints the %c specifier with corresponding
+ * _printint - prints the %d and %i specifier with corresponding
  * variadic argument.
  * @args: va_list variable.
  * Return: number of bytes printed.
  */
 int _printint(va_list args)
 {
-	int i;
-    char c;
+	int i, counter = 0;
 
 	i = va_arg(args, int);
-    c = atoi(i);
-	return (writechar(c));
+	counter = counter + intToStr(i);
+	
+	return (counter);
 }
