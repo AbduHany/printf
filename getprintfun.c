@@ -26,5 +26,5 @@ int getprintfun(va_list args, const char *cursor)
 			return (_printint(args));
 		i++;
 	}
-	return (0);
+	return (-1);
 }
