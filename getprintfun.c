@@ -1,8 +1,9 @@
 #include "main.h"
 
 /**
- * get_print_fun - executes the corresponding printfunction
+ * getprintfun - executes the corresponding printfunction
  * according to the format specifier.
+ * @args: va_list variable.
  * @cursor: pointer to the % sign in the format string.
  *
  * Return: number of bytes printed.
