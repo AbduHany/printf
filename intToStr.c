@@ -2,46 +2,21 @@
 /**
  * intToStr - int to char
  * @x : integer to be convereted
- * @flag: fla gif the number is negative or not
- * @negativeSignPrinted:: fag if negative sign is printed or not
  * Return: returns the number of the charecters printed including
  * the negative sign if the sign is neagtive
 */
-int intToStr(signed int x, int flag, int negativeSignPrinted)
+int intToStr(signed int x)
 {
-	int converted = 0, rem, checker, counter = 0;
-	char c;
+	unsigned int number = x;
 
 	if (x < 0)
 	{
-		flag = 1;
-		checker = (x * (-1));
+		writechar('-');
+		number = -number;
 	}
-	else
+	if ((number / 10) > 0)
 	{
-		flag = 0;
-		checker = x;
+		intToStr(number / 10);
 	}
-
-	if (checker > 0)
-	{
-		rem = checker % 10;
-		converted = rem + 48;
-		c = converted;
-		checker = checker / 10;
-		if (flag == 1 && !negativeSignPrinted)
-		{
-			writechar('-');
-			negativeSignPrinted = 1;
-			counter++;
-		}
-		intToStr(checker, flag, negativeSignPrinted);
-		counter = counter + (writechar(c));
-	}
-	else
-	{
-
-	}
-
-	return (counter);
+	writechar((number % 10) + 48);
 }

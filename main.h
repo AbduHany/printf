@@ -14,7 +14,7 @@ int _printchar(va_list args);
 int _printstr(va_list args);
 int _printperc(void);
 int _printint(va_list args);
-int intToStr(signed int x, int flag, int negativeSignPrinted);
+int intToStr(signed int x);
 
 
 #endif
