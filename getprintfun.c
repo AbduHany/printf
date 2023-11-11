@@ -14,13 +14,13 @@ int getprintfun(va_list args, const char *cursor)
 
 	while (cursor[i] != ' ' || cursor[i] != '\0')
 	{
-		i++;
 		if (cursor[i] == 'c')
 			return (_printchar(args));
 		else if (cursor[i] == 's')
 			return (_printstr(args));
 		else if (cursor[i] == '%')
 			return (_printperc());
+		i++;
 	}
 	return (0);
 }

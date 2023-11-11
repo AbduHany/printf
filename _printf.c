@@ -13,7 +13,8 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-	if (format == NULL || format[0] == '\0')
+	if (format == NULL || (format[0] == '%' && format[1] == '\0') ||
+	(format[0] == '%' && format[1] == ' ' && format[2] == '\0'))
 		return (-1);
 	i = 0;
 	while (format[i] != '\0')
@@ -22,14 +23,14 @@ int _printf(const char *format, ...)
 		{
 			prntd_chars += writechar(format[i]);
 			i++;
+			continue;
 		}
-		else
-		{
-			cursor = &format[i];
-			prntd_chars += getprintfun(args, cursor);
-			while (format[i] != ' ' && format[i] != '\0')
-				i++;
-		}
+		i++;
+		prntd_chars += getprintfun(args, &format[i]);
+		while (format[i] != ' ' && format[i] != '%' &&
+		format[i] != '\\' && format[i] != '\0')
+			i++;
 	}
+	va_end(args);
 	return (prntd_chars);
 }
