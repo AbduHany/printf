@@ -25,7 +25,8 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%')
 		{
-			if (format[i + 1] == '\0' || format[i + 1] == ' ')
+			if (format[i + 1] == '\0' || (format[i + 1] == ' ' &&
+			format[i + 2] == '\0'))
 				return (-1);
 			i++;
 			prntd_chars += getprintfun(args, &format[i]);
