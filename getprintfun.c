@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * getprintfun - executes the corresponding printfunction
  * according to the format specifier.
@@ -20,6 +19,8 @@ int getprintfun(va_list args, const char *cursor)
 			return (_printstr(args));
 		else if (cursor[i] == '%')
 			return (_printperc());
+		else if (cursor[i] == 'i' || cursor[i] == 'd')
+			return (_printint);
 		i++;
 	}
 	return (0);
