@@ -8,7 +8,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, prntd_chars = 0;
+	int i, prntd_chars = 0, tmp = 0;
 	va_list args;
 
 	va_start(args, format);
@@ -26,7 +26,10 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == '\0' || format[i + 1] == ' ')
 				return (-1);
 			i++;
-			prntd_chars += getprintfun(args, &format[i]);
+			tmp = getprintfun(args, &format[i]);
+			if (tmp == -1)
+				return (-1)
+			prntd_chars += tmp;
 			continue;
 		}
 	}
