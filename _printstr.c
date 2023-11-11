@@ -9,9 +9,10 @@
 int _printstr(va_list args)
 {
 	char *str;
-	int len;
+	int len, i;
 
 	str = (char *) va_arg(args, char *);
-	len = strlen(str);
+	for (i = 0, len = 0; str[i]; i++)
+		len++;
 	writestr(str, len);
 }
