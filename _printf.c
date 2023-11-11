@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 		i++;
 		prntd_chars += getprintfun(args, &format[i]);
 		while (format[i] != ' ' && format[i] != '%' &&
-		format[i] != '\\' && format[i] != '\0')
+		format[i] != '\0')
 			i++;
 	}
 	va_end(args);
