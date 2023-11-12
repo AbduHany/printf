@@ -9,8 +9,6 @@
  */
 int writechar(char c)
 {
-	if (c == '\0')
-		return (-1);
 	return (write(1, &c, 1));
 }
 
