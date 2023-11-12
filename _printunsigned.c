@@ -6,11 +6,11 @@
 */
 int _printunsigned(va_list args)
 {
-    unsigned int x;
-    int counter = 0;
+	unsigned int x;
+	int counter = 0;
 
-    x = va_arg(args, unsigned int);
+	x = va_arg(args, unsigned int);
 
-    counter = counter + unsignedToStr(x);
-    return (counter);
+	counter = counter + unsignedToStr(x);
+	return (counter);
 }

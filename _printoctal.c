@@ -1,17 +1,17 @@
 #include "main.h"
 /**
- * _printbin - print unsigned int argument in binary.
+ * _printoctal - print int argument in octal.
  * @args: va_list variable.
  *
  * Return: number of bytes printed.
  */
-int _printbin(va_list args)
+int _printoctal(va_list args)
 {
-	unsigned long int num, temp;
+	unsigned int num, temp;
 	int len = 0, rem, counter = 0, i = 0;
 	char *ptr;
 
-	num = va_arg(args, unsigned long int);
+	num = va_arg(args, unsigned int);
 
 	if (num == 0)
 	{
@@ -22,7 +22,7 @@ int _printbin(va_list args)
 	temp = num;
 	while (temp != 0) /* getting the lenght of the binary conversion*/
 	{
-		temp = temp / 2;
+		temp = temp / 8;
 		len++;
 	}
 
@@ -32,10 +32,10 @@ int _printbin(va_list args)
 
 	while (num != 0)
 	{
-		rem = num % 2;
+		rem = num % 8;
 		ptr[i] = rem + '0';
 		i++;
-		num = num / 2;
+		num = num / 8;
 	}
 
 	for (i = (len - 1); i >= 0; i--) /*printing the string in ptr*/
