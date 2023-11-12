@@ -43,8 +43,12 @@ int _printS(va_list args)
 	int len = 0, i, printed = 0;
 
 	str = va_arg(args, unsigned char *);
+	if (str == NULL)
+		str = (unsigned char *) "(null)";
 	for (i = 0; str[i]; i++)
 		len++;
+	if (len == 0)
+		return (0);
 	for (i = 0; i < len; i++)
 	{
 		int y = str[i];
