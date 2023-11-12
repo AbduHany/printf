@@ -26,6 +26,9 @@ int _printhexa_s(va_list args);
 char character_replace_s(int hexaNum);
 int _printhexa_C(va_list args);
 char character_replace_C(int hexaNum);
+int _printS(va_list args);
+int intToHex(int x);
+
 
 
 #endif

@@ -31,6 +31,9 @@ int getprintfun(va_list args, const char *cursor)
 		printed += _printhexa_C(args);
 	else if (cursor[i] == 'o')
 		printed += _printoctal(args);
+	else if (cursor[i] == 'S')
+		printed += _printS(args);
+
 	else
 	{
 		printed += writechar('%');
