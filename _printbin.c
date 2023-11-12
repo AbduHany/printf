@@ -8,7 +8,7 @@
  */
 int _printbin(va_list args)
 {
-	unsigned int num;
+	unsigned long int num;
 	int count = 0, bin = 0, i, rem;
 
 	num = va_arg(args, int);
@@ -19,7 +19,7 @@ int _printbin(va_list args)
 		num = num / 2;
 		bin = bin + (rem * i);
 	}
-	count += intToStr(bin, 0, 0);
+	count += intToStr(bin);
 	return (count);
 
 }
