@@ -9,7 +9,7 @@
 int intToStr(int x)
 {
 	int len = 0, i = 0, temp, rem, negative_flag = 0, counter = 0;
-	char *ptr, *max;
+	char *ptr;
 
 	if (x < 0) /*checking the value of x*/
 	{
@@ -17,15 +17,9 @@ int intToStr(int x)
 		x = -x;
 	}
 	if (x == -2147483648)
-	{
-		max = "-2147483648";
-		return (writestr(max, 11));
-	}
+		return (writestr("-2147483648", 11));
 	else if (x == 0)
-	{
-		writechar('0');
-		return (1);
-	}
+		return (writechar('0'));
 	temp = x;
 	while (temp) /* finding length and allocatin dynamic memory for ptr*/
 	{
