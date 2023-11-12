@@ -11,7 +11,7 @@ int _printbin(va_list args)
 	unsigned long int num;
 	int count = 0, bin = 0, i, rem;
 
-	num = va_arg(args, int);
+	num = va_arg(args, unsigned long int);
 
 	for (i = 1; num != 0; i *= 10)
 	{
