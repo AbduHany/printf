@@ -9,11 +9,10 @@
 int _printbin(va_list args)
 {
 	unsigned int num;
-	int count, bin = 0, i, rem;
+	int count = 0, bin = 0, i, rem;
 
 	num = va_arg(args, int);
-	if (num < 0)
-		return (-1);
+
 	for (i = 1; num != 0; i *= 10)
 	{
 		rem = num % 2;
