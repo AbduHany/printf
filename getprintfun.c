@@ -13,24 +13,18 @@ int getprintfun(va_list args, const char *cursor)
 
 	if (cursor == NULL || cursor[0] == '\0')
 		return (-1);
-
-	while (cursor[i] != ' ' || cursor[i] != '\0')
+	if (cursor[i] == 'c')
+		printed += _printchar(args);
+	else if (cursor[i] == 's')
+		printed += _printstr(args);
+	else if (cursor[i] == '%')
+		return (_printperc());
+	else if (cursor[i] == 'i' || cursor[i] == 'd')
+		printed += _printint(args);
+	else
 	{
-		if (cursor[i] == 'c')
-			return (_printchar(args));
-		else if (cursor[i] == 's')
-			return (_printstr(args));
-		else if (cursor[i] == '%')
-			return (_printperc());
-		else if (cursor[i] == 'i' || cursor[i] == 'd')
-			return (_printint(args));
-		else
-		{
-			printed += writechar('%');
-			printed += writechar(cursor[i]);
-			return(printed);
-		}
-		i++;
+		printed += writechar('%');
+		printed += writechar(cursor[i]);
 	}
-	return (-1);
+	return (printed);
 }
