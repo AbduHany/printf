@@ -22,5 +22,22 @@ int writechar(char c)
  */
 int writestr(char *str, int len)
 {
-	return (write(1, str, len));
+	int j = 0, i, printed = 0, chunk;
+	char buffer[BUFFSIZE];
+
+	while (len > 0)
+	{
+		if (len >= BUFFSIZE)
+			chunk = 1024;
+		else
+			chunk = len;
+		for (i = 0; i < chunk; i++)
+		{
+			buffer[i] = str[j];
+			j++;
+		}
+		printed += write(1, buffer, chunk);
+		len = len - chunk;
+	}
+	return (printed);
 }

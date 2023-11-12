@@ -7,6 +7,8 @@
 #include <stdlib.h>
 #include <limits.h>
 
+#define BUFFSIZE 1024
+
 int getprintfun(va_list args, const char *cursor);
 int writestr(char *str, int len);
 int writechar(char c);
