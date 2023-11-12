@@ -23,6 +23,14 @@ int getprintfun(va_list args, const char *cursor)
 		printed += _printint(args);
 	else if (cursor[i] == 'b')
 		printed += _printbin(args);
+	else if (cursor[i] == 'u')
+		printed += _printunsigned(args);
+	/*else if (cursor[i] == 'x')
+		printed += _printhexa_s(args);
+	else if (cursor[i] == 'Z')
+		printed += _printhexa_C(args);
+	else if (cursor[i] == 'o')
+		printed += _printoctal(args);*/
 	else
 	{
 		printed += writechar('%');

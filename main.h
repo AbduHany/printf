@@ -19,6 +19,8 @@ int _printperc(void);
 int _printint(va_list args);
 int intToStr(int x);
 int _printbin(va_list args);
+int _printunsigned(va_list args);
+int unsignedToStr(unsigned int x);
 
 
 #endif
