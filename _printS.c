@@ -44,8 +44,6 @@ int _printS(va_list args)
 	str = va_arg(args, char *);
 	if (str == NULL)
 		str = "(null)";
-	if (str[0] == '\0')
-		return (-1);
 	for (i = 0; str[i]; i++)
 		len++;
 	for (i = 0; i < len; i++)
