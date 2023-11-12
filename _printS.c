@@ -14,8 +14,6 @@ int _printS(va_list args)
 	int len = 0, i, printed = 0, tmp;
 
 	str = va_arg(args, char *);
-	if (str == NULL)
-		str = "(null)";
 	for (i = 0; str[i]; i++)
 		len++;
 	for (i = 0; i < len; i++)
