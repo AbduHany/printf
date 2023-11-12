@@ -7,7 +7,7 @@
  */
 int _printperc(void)
 {
-	char c = '%';
+	char c = '%';  /*what if it is a ? or a ! , what would it print */
 
 	return (writechar(c));
 }

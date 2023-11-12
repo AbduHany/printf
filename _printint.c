@@ -10,7 +10,7 @@ int _printint(va_list args)
 	int i, counter = 0;
 
 	i = va_arg(args, int);
-	counter = counter + intToStr(i, 0, 0);
+	counter = counter + intToStr(i);
 
 	return (counter);
 }

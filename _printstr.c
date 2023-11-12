@@ -16,5 +16,6 @@ int _printstr(va_list args)
 		str = "(null)";
 	for (i = 0, len = 0; *(str + i) != '\0'; i++)
 		len++;
+
 	return (writestr(str, len));
 }
