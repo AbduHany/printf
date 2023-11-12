@@ -8,18 +8,36 @@
  */
 int _printbin(va_list args)
 {
-	unsigned long int num;
-	int count = 0, bin = 0, i, rem;
+	unsigned long int num, temp;
+	int len = 0, rem, counter = 0, i = 0;
+	char *ptr;
 
 	num = va_arg(args, unsigned long int);
+	temp = num;
+	while (temp != 0) /* getting the lenght of the binary conversion*/
+	{
+		temp = temp / 2;
+		len++;
+	}
 
-	for (i = 1; num != 0; i *= 10)
+	ptr = malloc(sizeof(char) * len);
+	if (ptr == NULL)
+		return (-1);
+
+	while (num != 0)
 	{
 		rem = num % 2;
+		ptr[i] = rem + '0';
+		i++;
 		num = num / 2;
-		bin = bin + (rem * i);
 	}
-	count += intToStr(bin);
-	return (count);
 
+	for (i = (len - 1); i >= 0; i--) /*printing the string in ptr*/
+	{
+		counter = counter + writechar(ptr[i]);
+	}
+
+	free(ptr);
+	return (counter);
 }
+
