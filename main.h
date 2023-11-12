@@ -5,6 +5,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <limits.h>
 
 int getprintfun(va_list args, const char *cursor);
 int writestr(char *str, int len);
@@ -15,6 +16,7 @@ int _printstr(va_list args);
 int _printperc(void);
 int _printint(va_list args);
 int intToStr(int x);
+int _printbin(va_list args);
 
 
 #endif
