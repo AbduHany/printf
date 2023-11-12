@@ -33,6 +33,10 @@ int getprintfun(va_list args, const char *cursor)
 		printed += _printoctal(args);
 	else if (cursor[i] == 'S')
 		printed += _printS(args);
+	else if (cursor[i] == 'p')
+		printed += _printaddress(args);
+	
+	
 
 	else
 	{
