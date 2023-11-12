@@ -38,12 +38,11 @@ char *tohex(char *hex, int ch)
  */
 int _printS(va_list args)
 {
-	char *str, *output;
+	unsigned char *str;
+	char *output;
 	int len = 0, i, printed = 0;
 
-	str = va_arg(args, char *);
-	if (str == NULL)
-		str = "(null)";
+	str = va_arg(args, unsigned char *);
 	for (i = 0; str[i]; i++)
 		len++;
 	for (i = 0; i < len; i++)
@@ -52,7 +51,7 @@ int _printS(va_list args)
 
 		if (y >= 32 && y <= 127)
 			printed += writechar(str[i]);
-		else if (y < 32 && y >= 0)
+		else
 		{
 			int ch = str[i];
 			char hex[5] = {'\\', 'x', '0', '0', '\0'};
