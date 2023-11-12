@@ -21,6 +21,8 @@ int getprintfun(va_list args, const char *cursor)
 		return (_printperc());
 	else if (cursor[i] == 'i' || cursor[i] == 'd')
 		printed += _printint(args);
+	else if (cursor[i] == 'b')
+		printed += _printbin(args);
 	else
 	{
 		printed += writechar('%');
