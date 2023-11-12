@@ -15,6 +15,6 @@ int _printstr(va_list args)
 	if (str == NULL)
 		str = "(null)";
 	for (i = 0, len = 0; str[i]; i++)
-		len++;
+		len++;   /* what if the argument was a string */
 	return (writestr(str, len));
 }

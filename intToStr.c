@@ -1,24 +1,19 @@
 #include "main.h"
-
 /**
  * intToStr - Convert integer to char
  * @x: Integer to be converted
- * @flag: Flag if the number is negative or not
- * @negativeSignPrinted: Flag if the negative sign is printed or not
  *
  * Return: Returns the number of characters printed,
  * including the negative sign if the number is negative
  */
-int intToStr(int x, int flag, int negativeSignPrinted)
+int intToStr(int x)
 {
-	int digits[10], i;
-	int numDigits = 0, rem;
-	static int counter = 1;
-	char c;
-
+	int len = 0, i = 0, temp, rem, negative_flag = 0, counter = 0;
+	char *ptr;
+	/*checking the value of x*/
 	if (x < 0)
 	{
-		flag = 1;
+		negative_flag = 1;
 		x = -x;
 	}
 	else if (x == 0)
@@ -26,27 +21,31 @@ int intToStr(int x, int flag, int negativeSignPrinted)
 		writechar('0');
 		return (1);
 	}
-	else
+	/* finding length and allocatin dynamic memory for ptr*/
+	temp = x;
+	while (temp)
 	{
-		flag = 0;
+		temp = temp / 10;
+		len++;
 	}
-
-	if (flag == 1 && !negativeSignPrinted)
-	{
-		writechar('-');
-		negativeSignPrinted = 1;
-		counter++;
-	}
-	while (x > 0)
+	ptr = malloc(sizeof(char) * (len));
+	/*intializing values fo rthe pointer*/
+	while (x)
 	{
 		rem = x % 10;
-		digits[numDigits++] = rem;
+		ptr[i] = rem + '0';
+		i++;
 		x = x / 10;
 	}
-	for (i = numDigits - 1; i >= 0; i--)
+	for (i = (len - 1); i >= 0; i--) /*printing the string in ptr*/
 	{
-		c = digits[i] + '0';
-		counter += writechar(c);
+		if (negative_flag == 1)
+		{
+			counter = counter + writechar('-');
+			negative_flag = 0;
+		}
+		counter = counter + writechar(ptr[i]);
 	}
-	return (counter - 1);
+	free(ptr);
+	return (counter);
 }
