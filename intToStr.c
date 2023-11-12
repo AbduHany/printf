@@ -9,7 +9,7 @@
 int intToStr(int x)
 {
 	int len = 0, i = 0, temp, rem, negative_flag = 0, counter = 0;
-	char *ptr, *max;
+	char *ptr;
 
 	if (x < 0) /*checking the value of x*/
 	{
