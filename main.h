@@ -21,6 +21,8 @@ int intToStr(int x);
 int _printbin(va_list args);
 int _printunsigned(va_list args);
 int unsignedToStr(unsigned int x);
+int _printS(va_list args);
+int intToHex(int x);
 
 
 #endif
