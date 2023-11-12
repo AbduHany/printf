@@ -9,7 +9,7 @@
 int _printstr(va_list args)
 {
 	char *str;
-	int len, i, prntd_chars = 0;
+	int len, i;
 
 	str = (char *) va_arg(args, char *);
 	if (str == NULL)
