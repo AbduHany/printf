@@ -1,4 +1,32 @@
 #include "main.h"
+/**
+ * tohex - converts a number to 2 digit hexadecimal
+ * prefixed with a '\x'
+ * @hex: pointer to empty string.
+ *
+ * Return: pointer to converted hex string.
+ */
+char *tohex(char *hex, int ch)
+{
+	int j = 3, tmp;
+
+	while (ch != 0 && j >= 2)
+	{
+		tmp = ch % 16;
+		if (tmp < 10)
+		{
+			tmp += 48;
+			hex[j--] = tmp;
+		}
+		else
+		{
+			tmp += 55;
+			hex[j--] = tmp;
+		}
+		ch /= 16;
+	}
+	return (hex);
+}
 
 /**
  * _printS - prints string (non-printable characters
@@ -10,42 +38,30 @@
  */
 int _printS(va_list args)
 {
-	char *str;
-	int len = 0, i, printed = 0, tmp;
+	unsigned char *str;
+	char *output;
+	int len = 0, i, printed = 0;
 
-	str = va_arg(args, char *);
+	str = va_arg(args, unsigned char *);
+	if (str == NULL)
+		str = (unsigned char *) "(null)";
 	for (i = 0; str[i]; i++)
 		len++;
+	if (len == 0)
+		return (0);
 	for (i = 0; i < len; i++)
 	{
 		int y = str[i];
+
 		if (y >= 32 && y <= 127)
 			printed += writechar(str[i]);
 		else
 		{
-			char hex[3] = {'0', '0', '\0'};
-			int x = str[i], j = 1;
+			int ch = str[i];
+			char hex[5] = {'\\', 'x', '0', '0', '\0'};
 
-			printed += writestr("\\x", 2);
-			while (x != 0 && j >= 0)
-			{
-				tmp = x % 16;
-				if (tmp < 10)
-				{
-					tmp += 48;
-					hex[j] = tmp;
-					j--;
-				}
-				else
-				{
-					tmp += 55;
-					hex[j] = tmp;
-					j--;
-				}
-				x /= 16;
-
-			}
-			printed += writestr(hex, 2);
+			output = tohex(hex, ch);
+			printed += writestr(output, 4);
 		}
 	}
 	return (printed);
