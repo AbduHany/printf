@@ -12,8 +12,10 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-	if (format == NULL || format[0] == '\0')
+	if (format == NULL)
 		return (-1);
+	if (format[0] == '\0')
+		return (0);
 	for (i = 0; format && format[i]; i++)
 	{
 		if (format[i] != '%')
@@ -28,7 +30,10 @@ int _printf(const char *format, ...)
 			i++;
 			tmp = getprintfun(args, &format[i]);
 			if (tmp == -1)
+			{
+				va_end(args);
 				return (-1);
+			}
 			prntd_chars += tmp;
 			continue;
 		}
