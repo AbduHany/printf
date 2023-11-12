@@ -17,15 +17,9 @@ int intToStr(int x)
 		x = -x;
 	}
 	if (x == -2147483648)
-	{
-		max = "-2147483648";
-		return (writestr(max, 11));
-	}
+		return (writestr("-2147483648", 11));
 	else if (x == 0)
-	{
-		writechar('0');
-		return (1);
-	}
+		return (writechar('0'));
 	temp = x;
 	while (temp) /* finding length and allocatin dynamic memory for ptr*/
 	{
