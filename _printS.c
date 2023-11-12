@@ -52,7 +52,7 @@ int _printS(va_list args)
 
 		if (y >= 32 && y <= 127)
 			printed += writechar(str[i]);
-		else
+		else if (y < 32 && y >= 0)
 		{
 			int ch = str[i];
 			char hex[5] = {'\\', 'x', '0', '0', '\0'};
