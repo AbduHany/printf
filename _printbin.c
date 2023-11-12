@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _printbin - print unsigned int argument in binary.
  * @args: va_list variable.
@@ -13,12 +12,14 @@ int _printbin(va_list args)
 	char *ptr;
 
 	num = va_arg(args, unsigned long int);
+	
 	if (num == 0)
 	{
 		writechar('0');
 		return (1);
 	}
 
+	
 	temp = num;
 	while (temp != 0) /* getting the lenght of the binary conversion*/
 	{
