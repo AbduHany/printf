@@ -10,8 +10,8 @@ int intToStr(int x)
 {
 	int len = 0, i = 0, temp, rem, negative_flag = 0, counter = 0;
 	char *ptr;
-	/*checking the value of x*/
-	if (x < 0)
+
+	if (x < 0) /*checking the value of x*/
 	{
 		negative_flag = 1;
 		x = -x;
@@ -21,16 +21,16 @@ int intToStr(int x)
 		writechar('0');
 		return (1);
 	}
-	/* finding length and allocatin dynamic memory for ptr*/
 	temp = x;
-	while (temp)
+	while (temp) /* finding length and allocatin dynamic memory for ptr*/
 	{
 		temp = temp / 10;
 		len++;
 	}
 	ptr = malloc(sizeof(char) * (len));
-	/*intializing values fo rthe pointer*/
-	while (x)
+	if (ptr == NULL)
+		return (-1);
+	while (x) /*intializing values fo rthe pointer*/
 	{
 		rem = x % 10;
 		ptr[i] = rem + '0';
