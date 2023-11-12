@@ -20,7 +20,8 @@ int _printS(va_list args)
 		len++;
 	for (i = 0; i < len; i++)
 	{
-		if (str[i] >= 32 && str[i] <= 127)
+		int y = str[i];
+		if (y >= 32 && y <= 127)
 			printed += writechar(str[i]);
 		else
 		{
