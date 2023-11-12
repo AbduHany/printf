@@ -11,12 +11,10 @@ int _printstr(va_list args)
 	char *str;
 	int len, i, prntd_chars = 0;
 
-	str = va_arg(args, char *);
+	str = (char *) va_arg(args, char *);
 	if (str == NULL)
 		str = "(null)";
-	for (i = 0, len = 0; str[i]; i++)
+	for (i = 0, len = 0; *(str + i) != '\0'; i++)
 		len++;
-	for (i = 0; i < len; i++)
-		prntd_chars += writechar(str[i]);
-	return (prntd_chars);
+	return (writestr(str, len));
 }

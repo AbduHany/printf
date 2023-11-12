@@ -31,7 +31,6 @@ int _printf(const char *format, ...)
 			tmp = getprintfun(args, &format[i]);
 			if (tmp == -1)
 			{
-				va_end(args);
 				return (-1);
 			}
 			prntd_chars += tmp;

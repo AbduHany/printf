@@ -5,6 +5,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <limits.h>
 
 int getprintfun(va_list args, const char *cursor);
 int writestr(char *str, int len);

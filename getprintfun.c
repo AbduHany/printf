@@ -9,7 +9,7 @@
  */
 int getprintfun(va_list args, const char *cursor)
 {
-	int i = 0;
+	int i = 0, printed = 0;
 
 	if (cursor == NULL || cursor[0] == '\0')
 		return (-1);
@@ -24,6 +24,12 @@ int getprintfun(va_list args, const char *cursor)
 			return (_printperc());
 		else if (cursor[i] == 'i' || cursor[i] == 'd')
 			return (_printint(args));
+		else
+		{
+			printed += writechar('%');
+			printed += writechar(cursor[i]);
+			return(printed);
+		}
 		i++;
 	}
 	return (-1);
