@@ -3,6 +3,7 @@
  * tohex - converts a number to 2 digit hexadecimal
  * prefixed with a '\x'
  * @hex: pointer to empty string.
+ * @ch: number to be converted to hexadecimal.
  *
  * Return: pointer to converted hex string.
  */
@@ -57,6 +58,7 @@ int _printS(va_list args)
 		{
 			int ch = str[i];
 			char hex[5] = {'\\', 'x', '0', '0', '\0'};
+
 			output = tohex(hex, ch);
 			printed += writestr(output, 4);
 			continue;
