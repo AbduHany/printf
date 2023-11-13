@@ -29,6 +29,7 @@ char character_replace_C(int hexaNum);
 int _printS(va_list args);
 int intToHex(int x);
 int _printaddress(va_list args);
+int _printrot13(va_list args);
 char *tohex(char *hex, int ch);
 
 #endif

@@ -30,9 +30,7 @@ int _printf(const char *format, ...)
 			i++;
 			tmp = getprintfun(args, &format[i]);
 			if (tmp == -1)
-			{
 				return (-1);
-			}
 			prntd_chars += tmp;
 			continue;
 		}

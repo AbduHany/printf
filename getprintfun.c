@@ -35,6 +35,8 @@ int getprintfun(va_list args, const char *cursor)
 		printed += _printS(args);
 	else if (cursor[i] == 'p')
 		printed += _printaddress(args);
+	else if (cursor[i] == 'R')
+		printed += _printrot13(args);
 	else
 	{
 		printed += writechar('%');
