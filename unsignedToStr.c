@@ -19,6 +19,8 @@ int unsignedToStr(unsigned int x)
 		temp = temp / 10;
 		len++;
 	}
+	if (len == 0)
+		return (0);
 	ptr = malloc(sizeof(char) * (len));
 	if (ptr == NULL)
 		return (-1);

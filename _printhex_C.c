@@ -34,7 +34,7 @@ char character_replace_C(int hexaNum)
 		default:
 			result = '\0';  /* for invalid input */
 			break;
-	}
+		}
 
 	return (result);
 }
@@ -52,20 +52,18 @@ int _printhexa_C(va_list args)
 
 	num = va_arg(args, unsigned int);
 	if (num == 0)
-	{
-		writechar('0');
-		return (1);
-	}
+		return (writechar('0'));
 	temp = num;
 	while (temp != 0) /* getting the lenght of the binary conversion*/
 	{
 		temp = temp / 16;
 		len++;
 	}
+	if (len == 0)
+		return (0);
 	ptr = malloc(sizeof(char) * len);
 	if (ptr == NULL)
 		return (-1);
-
 	while (num != 0)
 	{
 		rem = num % 16;

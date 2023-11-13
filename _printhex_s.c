@@ -10,9 +10,8 @@
 char character_replace_s(int hexaNum)
 {
 	char result;
-
-		switch (hexaNum)
-		{
+	switch (hexaNum)
+	{
 		case 10:
 			result = 'a';
 			break;
@@ -35,7 +34,6 @@ char character_replace_s(int hexaNum)
 			result = '\0';  /* for invalid input */
 			break;
 	}
-
 	return (result);
 }
 /**
@@ -52,16 +50,15 @@ int _printhexa_s(va_list args)
 
 	num = va_arg(args, unsigned int);
 	if (num == 0)
-	{
-		writechar('0');
-		return (1);
-	}
+		return (writechar('0'));
 	temp = num;
 	while (temp != 0) /* getting the lenght of the binary conversion*/
 	{
 		temp = temp / 16;
 		len++;
 	}
+	if (len == 0)
+		return (0);
 	ptr = malloc(sizeof(char) * len);
 	if (ptr == NULL)
 		return (-1);
