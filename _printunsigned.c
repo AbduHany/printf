@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _printunsigned - prints unsigned decimal ineteger
+ * _printui - prints unsigned decimal ineteger
  * @args: the argument it gets to print
  * Return: returns the number of charecters printed
 */
