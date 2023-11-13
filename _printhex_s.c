@@ -10,6 +10,7 @@
 char character_replace_s(int hexaNum)
 {
 	char result;
+
 	switch (hexaNum)
 	{
 		case 10:

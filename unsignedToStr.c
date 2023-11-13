@@ -8,7 +8,8 @@
  */
 int unsignedToStr(unsigned int x)
 {
-	int len = 0, i = 0, temp, rem, counter = 0;
+	int len = 0, i = 0, rem, counter = 0;
+	unsigned int temp;
 	char *ptr;
 
 	if (x == 0)

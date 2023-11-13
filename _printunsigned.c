@@ -4,7 +4,7 @@
  * @args: the argument it gets to print
  * Return: returns the number of charecters printed
 */
-int _printunsigned(va_list args)
+int _printui(va_list args)
 {
 	unsigned int x;
 	int counter = 0;

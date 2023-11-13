@@ -24,7 +24,7 @@ int getprintfun(va_list args, const char *cursor)
 	else if (cursor[i] == 'b')
 		printed += _printbin(args);
 	else if (cursor[i] == 'u')
-		printed += _printunsigned(args);
+		printed += _printui(args);
 	else if (cursor[i] == 'x')
 		printed += _printhexa_s(args);
 	else if (cursor[i] == 'X')
@@ -35,9 +35,6 @@ int getprintfun(va_list args, const char *cursor)
 		printed += _printS(args);
 	else if (cursor[i] == 'p')
 		printed += _printaddress(args);
-	
-	
-
 	else
 	{
 		printed += writechar('%');
