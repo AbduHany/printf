@@ -13,10 +13,7 @@ int _printaddress(va_list args)
 
 	num = va_arg(args, unsigned long int);
 	if (num == 0)
-	{
-		writechar('0');
-		return (1);
-	}
+		return (writestr("(nil)", 5));
 	temp = num;
 	while (temp != 0) /* getting the lenght of the binary conversion*/
 	{
@@ -42,15 +39,9 @@ int _printaddress(va_list args)
 	}
 	j = 1;
 	while (j >= 0)
-	{
-		ptr[i] = prefix[j];
-		j--;
-		i++;
-	}
+		ptr[i++] = prefix[j--];
 	for (i = (len + 2 - 1); i >= 0; i--) /*printing the string in ptr*/
-	{
 		counter = counter + writechar(ptr[i]);
-	}
 	free(ptr);
 	return (counter);
 }

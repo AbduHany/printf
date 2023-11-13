@@ -3,6 +3,7 @@
  * tohex - converts a number to 2 digit hexadecimal
  * prefixed with a '\x'
  * @hex: pointer to empty string.
+ * @ch: number to be converted to hexadecimal.
  *
  * Return: pointer to converted hex string.
  */
@@ -38,13 +39,13 @@ char *tohex(char *hex, int ch)
  */
 int _printS(va_list args)
 {
-	unsigned char *str;
+	char *str;
 	char *output;
 	int len = 0, i, printed = 0;
 
-	str = va_arg(args, unsigned char *);
+	str = va_arg(args, char *);
 	if (str == NULL)
-		str = (unsigned char *) "(null)";
+		str = "(null)";
 	for (i = 0; str[i]; i++)
 		len++;
 	if (len == 0)
@@ -53,16 +54,16 @@ int _printS(va_list args)
 	{
 		int y = str[i];
 
-		if (y >= 32 && y <= 127)
-			printed += writechar(str[i]);
-		else
+		if (y < 32 || y >= 127)
 		{
 			int ch = str[i];
 			char hex[5] = {'\\', 'x', '0', '0', '\0'};
 
 			output = tohex(hex, ch);
 			printed += writestr(output, 4);
+			continue;
 		}
+		printed += writechar(str[i]);
 	}
 	return (printed);
 }
