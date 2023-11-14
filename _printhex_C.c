@@ -46,7 +46,6 @@ char character_replace_C(int hexaNum)
  *
  * Return: number of bytes printed.
  */
-
 int _printhexa_C(va_list args)
 {
 	unsigned int  num, temp;
