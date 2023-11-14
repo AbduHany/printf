@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _printchar - prints the %c specifier with corresponding
  * variadic argument.
