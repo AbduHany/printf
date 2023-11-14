@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _printrot13 - prints the rot'ed string.
  * @args: va_list variable.
