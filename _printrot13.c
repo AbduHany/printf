@@ -1,10 +1,12 @@
 #include "main.h"
+
 /**
  * _printrot13 - prints the rot'ed string.
  * @args: va_list variable.
  *
  * Return: number of bytes printed.
  */
+
 int _printrot13(va_list args)
 {
 	int i, j, len = 0, printed = 0;
