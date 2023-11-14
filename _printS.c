@@ -7,6 +7,7 @@
  *
  * Return: pointer to converted hex string.
  */
+
 char *tohex(char *hex, int ch)
 {
 	int j = 3, tmp;
