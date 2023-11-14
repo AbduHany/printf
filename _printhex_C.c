@@ -39,12 +39,14 @@ char character_replace_C(int hexaNum)
 
 	return (result);
 }
+
 /**
  * _printhexa_C - print int argument in hexadecimal CAPITAL letters.
  * @args: va_list variable.
  *
  * Return: number of bytes printed.
  */
+
 int _printhexa_C(va_list args)
 {
 	unsigned int  num, temp;
