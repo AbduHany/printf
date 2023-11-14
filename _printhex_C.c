@@ -7,6 +7,7 @@
  *
  * Return: the hexadecimal digit
  */
+
 char character_replace_C(int hexaNum)
 {
 	char result;
