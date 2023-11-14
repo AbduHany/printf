@@ -7,6 +7,7 @@
  *
  * Return: number of bytes printed.
  */
+
 int getprintfun(va_list args, const char *cursor)
 {
 	int i = 0, printed = 0;
