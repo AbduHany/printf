@@ -5,6 +5,7 @@
  *
  * Return: number of bytes printed.
  */
+
 int _printbin(va_list args)
 {
 	unsigned int num, temp;
