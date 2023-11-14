@@ -36,4 +36,3 @@ int _printbin(va_list args)
 	free(ptr);
 	return (counter);
 }
-
