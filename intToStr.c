@@ -6,6 +6,7 @@
  * Return: Returns the number of characters printed,
  * including the negative sign if the number is negative
  */
+
 int intToStr(int x)
 {
 	int len = 0, i = 0, temp, rem, negative_flag = 0, counter = 0;
