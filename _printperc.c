@@ -4,6 +4,7 @@
  *
  * Return: number of bytes printed.
  */
+
 int _printperc(void)
 {
 	char c = '%';
