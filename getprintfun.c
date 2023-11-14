@@ -45,5 +45,6 @@ int getprintfun(va_list args, const char *cursor)
 		printed += writechar('%');
 		printed += writechar(cursor[i]);
 	}
+
 	return (printed);
 }
