@@ -37,6 +37,7 @@ char *tohex(char *hex, int ch)
  * Return: number of bytes printed.
  * -1 if error was encountered.
  */
+
 int _printS(va_list args)
 {
 	char *str;
