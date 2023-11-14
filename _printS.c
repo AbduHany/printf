@@ -29,6 +29,7 @@ char *tohex(char *hex, int ch)
 	}
 	return (hex);
 }
+
 /**
  * _printS - prints string (non-printable characters
  * as (\x)ASCIICodeInHexadecimal.
