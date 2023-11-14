@@ -1,10 +1,12 @@
 #include "main.h"
+
 /**
  * _printoctal - print int argument in octal.
  * @args: va_list variable.
  *
  * Return: number of bytes printed.
  */
+
 int _printoctal(va_list args)
 {
 	unsigned int num, temp;
