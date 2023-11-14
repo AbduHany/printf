@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * _printperc - prints a percent sign.
  *
